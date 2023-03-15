@@ -19,12 +19,24 @@ const bscMainnet: NetworkUserConfig = {
   accounts: [process.env.KEY_MAINNET!],
 };
 
+const lbxTestnet: NetworkUserConfig = {
+  url: "https://test-rpc.libex.ai",
+  chainId: 2702,
+  accounts: [process.env.KEY_TESTNET!],
+}
+
+const lbxMainnet: NetworkUserConfig = {
+  url: "https://rpc.libex.ai",
+  chainId: 2701,
+  accounts: [process.env.KEY_MAINNET!],
+}
+
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {},
-    // testnet: bscTestnet,
-    // mainnet: bscMainnet,
+    testnet: lbxTestnet,
+    mainnet: lbxMainnet,
   },
   solidity: {
     compilers: [
